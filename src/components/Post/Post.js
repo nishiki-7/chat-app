@@ -1,17 +1,24 @@
 import React from 'react'
 import "./Post.css"
 
-function Post() {
+function Post(props) {
+  const {chatTimeline} = props;
+
   return (
-    <div className='post'>
+    <>
+    {chatTimeline.map((timeline) => {
+      <div className='post'>
         <div className='post-avatar'>
           な
         </div>
         <div className='post-message'>
-            おはようございます！今日も頑張ろう！
+            {timeline}
         </div>
         <button>削除</button>
-    </div>
+      </div>
+    })}
+    
+    </>
   )
 }
 

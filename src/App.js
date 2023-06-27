@@ -12,20 +12,18 @@ function App() {
 
   // 送信ボタンをクリックしたら、テキストを追加する処理
   const onClickSend = () => {
-    // chatTimeline配列を渡して、配列の最後に値を格納する→Todoアプリを参考に
-    const sendText = inputText;
-    setInputText(sendText);
-    console.log(inputText + "が送信されました！");
+    const newChatTimeLine = [...chatTimeline, inputText];
+    setChatTimeline(newChatTimeLine);
+    setInputText("");
+
+    console.log(chatTimeline[0] + "が送信されました！");
   }
 
 
   return (
    <div className='app'>
-    <Post />
-    <Post />
-    <Post />
-    <Post />
-    <Post />
+    <Post chatTimeline={chatTimeline}/>
+    {/* <Post inputText={inputText}/> */}
 
     {/* メッセージを入力する箇所 */}
     <Input 
