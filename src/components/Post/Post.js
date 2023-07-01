@@ -6,17 +6,20 @@ function Post(props) {
 
   return (
     <>
-    {chatTimeline.map((timeline) => {
+    {/* {chatTimeline.map((timeline) => { */}
       <div className='post'>
+        <div className='post-userName'>
+          ユーザーなめ
+        </div>
         <div className='post-avatar'>
           な
         </div>
         <div className='post-message'>
-            {timeline}
+            {chatTimeline}
         </div>
         <button>削除</button>
       </div>
-    })}
+    {/* })} */}
     
     </>
   )

@@ -12,18 +12,21 @@ function App() {
 
   // 送信ボタンをクリックしたら、テキストを追加する処理
   const onClickSend = () => {
+    if (inputText === "") return;
     const newChatTimeLine = [...chatTimeline, inputText];
     setChatTimeline(newChatTimeLine);
     setInputText("");
 
-    console.log(chatTimeline[0] + "が送信されました！");
+    // console.log(...chatTimeline + "が送信されました！");
   }
 
 
   return (
    <div className='app'>
-    <Post chatTimeline={chatTimeline}/>
-    {/* <Post inputText={inputText}/> */}
+
+    {chatTimeline.map((value) => <Post chatTimeline={value}/>)}
+    {/* <Post chatTimeline={chatTimeline}/> */}
+    
 
     {/* メッセージを入力する箇所 */}
     <Input 

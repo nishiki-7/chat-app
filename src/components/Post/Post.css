@@ -4,6 +4,13 @@
     padding: 10px;
 }
 
+.post-userName {
+    width: 100px;
+    height: 50px;
+    padding: 5px;
+    /* vertical-align: middle; */
+}
+
 .post-avatar {
     display: flex;
     justify-content: center;
