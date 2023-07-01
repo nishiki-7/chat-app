@@ -20,11 +20,22 @@ function App() {
     // console.log(...chatTimeline + "が送信されました！");
   }
 
+  // 削除ボタンをクリックしたら、indexで削除する
+  const onClickDelete = (index) => {
+    const newChatTimeLine = [...chatTimeline];
+    newChatTimeLine.splice(index, 1);
+    setChatTimeline(newChatTimeLine);
+  }
+
 
   return (
    <div className='app'>
 
-    {chatTimeline.map((value) => <Post chatTimeline={value}/>)}
+    {chatTimeline.map((value, index) => 
+      <Post chatTimeline={value} 
+            onClickDelete={onClickDelete}
+            index={index}
+      />)}
     {/* <Post chatTimeline={chatTimeline}/> */}
     
 

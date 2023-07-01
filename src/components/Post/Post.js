@@ -2,7 +2,7 @@ import React from 'react'
 import "./Post.css"
 
 function Post(props) {
-  const {chatTimeline} = props;
+  const {chatTimeline, onClickDelete, index} = props;
 
   return (
     <>
@@ -17,7 +17,7 @@ function Post(props) {
         <div className='post-message'>
             {chatTimeline}
         </div>
-        <button>削除</button>
+        <button onClick={() => onClickDelete(index)}>削除</button>
       </div>
     {/* })} */}
     
